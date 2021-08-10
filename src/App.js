@@ -1,19 +1,36 @@
 import React from 'react';
+import Post from './Post';
 
-const category = 'Posts da semana';
-
+// Props (Properties) -> Propriedades
 export default function App(){
   return (
     <>
-      <h1>JStack's Blog{console.log('Expressão dentro do JSX')}</h1>
-      <h2>{category}</h2>
+      <h1>JStack's Blog</h1>
+      <h2>Posts da semana</h2>
+
+      <hr />
+
+      <Post 
+        title="Título da Notícia 01" 
+        subtitle="Subtítulo da Notícia 01"
+      />
+      <Post 
+        title="Título da Notícia 02" 
+        subtitle="Subtítulo da Notícia 02"
+      />
+      <Post 
+        title="Título da Notícia 03" 
+        subtitle="Subtítulo da Notícia 03"
+      />
+
+      {/* <Post 
+        post={{
+          title: 'Título da Notícia 01',
+          subtitle: 'Subtítulo da Notícia 01'
+        }}
+      />   */}
+      
     </>
   );
 }
 
-/* 
-Podemos importar o React.Fragment, a difereça de se usar dessa forma '<React.Fragment></React.Fragment>' para essa forma '<></>' é no primeiro caso podemos colocar atributos no fragment por exemplo um className, mas no segundo caso isso não é permitido.
-Elementos adjacentes são irmãos. 
-*/
-
-// Render -> Renderizar
