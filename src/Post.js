@@ -1,16 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function Post(props){
-  // console.log(props);
-
-  /* props são apenas leitura para os filhos, não pode alterar os dados */
-  props.title = 'Título Sobrescrito'
+  // props.title = 'Título Sobrescrito'
 
   return(
     <>
       <article>
-        <h3>{props.title}</h3>
-        <small>{props.subtitle}</small>
+        <strong>{props.post.title}</strong><br />
+        <small>{props.post.subtitle}</small>
+        <br />
+        Média: {props.likes / 2}
       </article>
       <br />
     </>
@@ -18,3 +18,13 @@ export default function Post(props){
 }
 
 /* props.post.title */
+
+Post.propTypes = {
+  likes: PropTypes.number.isRequired,
+  post: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    subtitle: PropTypes.string.isRequired
+  }).isRequired
+}
+
+/* shape() serve para objetos */
