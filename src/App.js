@@ -10,10 +10,10 @@ export default function App() {
     {id: Math.random(),title: "Title#03",subtitle:  "Sub#03",likes:10},
     {id: Math.random(),title: "Title#04",subtitle:  "Sub#04",likes:30}
   ]);
-  console.log(posts);
+  // console.log(posts);
 
   function handleRefresh(){
-    setTimeout(()=>{
+   
       setPosts((prevState)=> [
         ...prevState,{
         id: Math.random(),
@@ -23,10 +23,14 @@ export default function App() {
         }
       ]);
 
-    },2000)
-
     //com o prevState o react só vai pegar a lista de posts no momento em que ele for atualizar o state
     //sempre que tiver que mudar o estado inicial do state, é melhor não usar o proprio estado, no caso pegar o proprio posts, é melhor usar o prevState assim não sobrescreve o valor do estado
+  }
+
+  function handleRemovePost(postId){
+    setPosts((prevState) => (
+    prevState.filter(post => post.id !== postId)
+    ));
   }
 
   return (
@@ -44,7 +48,9 @@ export default function App() {
             <Post
               key={post.id}
               likes={post.likes}
+              onRemove={handleRemovePost}
               post={{
+                id: post.id,
                 title: post.title,
                 subtitle: post.subtitle,
               }}
