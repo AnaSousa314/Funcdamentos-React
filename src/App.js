@@ -1,9 +1,17 @@
 import React, {useState} from "react";
 import Post from "./Post";
 import Header from "./Header";
+import { ThemeProvider } from "./ThemeContext";
+
+
 // Props (Properties) -> Propriedades
 
+
+
+
 export default function App() {
+
+
   const [posts,setPosts] = useState([
     {id: Math.random(),title: "Title#01",subtitle: "Sub#01",likes:50, read:false},
     {id: Math.random(),title: "Title#02",subtitle:  "Sub#02",likes:40,read:true},
@@ -11,6 +19,8 @@ export default function App() {
     {id: Math.random(),title: "Title#04",subtitle:  "Sub#04",likes:30,read:true}
   ]);
   // console.log(posts);
+
+
 
   function handleRefresh(){
    
@@ -34,8 +44,11 @@ export default function App() {
   }
 
   return (
-    <>
-      <Header title="JStack's Blog">
+    <ThemeProvider>
+      <Header 
+        title="JStack's Blog"
+        // onToggleTheme={handleToggleTheme}  
+      >
         <h2>
           Posts da semana
           <button onClick={handleRefresh}>Atualizar</button>
@@ -53,6 +66,6 @@ export default function App() {
           )
         )
       }
-    </>
+    </ThemeProvider>
   );
 }
