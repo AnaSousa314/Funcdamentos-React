@@ -22,6 +22,10 @@ module.exports={
         test: /\.js$/,
         exclude: /node_modules/,
         use: 'babel-loader'
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader','css-loader']//o style deve vir primeiro
       }
     ]
   },
@@ -29,6 +33,7 @@ module.exports={
     port: 3000,
   },
   mode: 'development'
+
 };
 
 

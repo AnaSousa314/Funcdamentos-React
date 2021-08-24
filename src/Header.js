@@ -8,14 +8,7 @@ export default function Header(props){
 
   const {onToggleTheme} = useContext(ThemeContext);
   return(
-    <div 
-      style={{
-        background: '#ccc',
-        fontFamily:'sans-serif',
-        fontSize: 36,//por padrão é em px, se quiser outro, coloque entre aspas;
-        marginBottom: '4rem'
-      }}
-    >
+    <>
       <h1>{props.title}</h1>
       <Button
         onClick={onToggleTheme}
@@ -23,7 +16,7 @@ export default function Header(props){
         Mudar Tema
       </Button>
       {props.children}
-    </div>
+    </>
   )
 }
 
@@ -36,3 +29,15 @@ Header.propTypes = {
 Header.defaultProps={
   title: `JStack's Blog`
 }
+
+/* exemplo de estilização inline
+  <div 
+      style={{
+        background: '#ccc',
+        fontFamily:'sans-serif',
+        fontSize: 36,//por padrão é em px, se quiser outro, coloque entre aspas;
+        marginBottom: '4rem'
+      }}
+  >
+  </div>    
+*/
