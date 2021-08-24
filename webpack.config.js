@@ -25,7 +25,15 @@ module.exports={
       },
       {
         test: /\.css$/,
-        use: ['style-loader','css-loader']//o style deve vir primeiro
+        use: [
+          'style-loader',
+          {
+            loader:'css-loader',
+            options:{
+              modules: true,
+            }
+          }
+        ]//o style deve vir primeiro
       }
     ]
   },
