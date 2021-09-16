@@ -14,10 +14,10 @@ export default function App() {
 
 
   const [posts,setPosts] = useState([
-    {id: Math.random(),title: "Title#01",subtitle: "Sub#01",likes:50, read:false},
-    {id: Math.random(),title: "Title#02",subtitle:  "Sub#02",likes:40,read:true},
-    {id: Math.random(),title: "Title#03",subtitle:  "Sub#03",likes:10,read:false},
-    {id: Math.random(),title: "Title#04",subtitle:  "Sub#04",likes:30,read:true}
+    {id: Math.random(),title: "Title#01",subtitle: "Sub#01",likes:50, read:false, removed: true},
+    {id: Math.random(),title: "Title#02",subtitle:  "Sub#02",likes:40,read:true, removed: false},
+    {id: Math.random(),title: "Title#03",subtitle:  "Sub#03",likes:10,read:false, removed: false},
+    {id: Math.random(),title: "Title#04",subtitle:  "Sub#04",likes:30,read:true, removed: false}
   ]);
   // console.log(posts);
 
@@ -39,9 +39,15 @@ export default function App() {
   }
 
   function handleRemovePost(postId){
-    setPosts((prevState) => (
-    prevState.filter(post => post.id !== postId)
-    ));
+    // setPosts((prevState) => (
+    // prevState.filter(post => post.id !== postId)
+    // ));
+
+    setPosts((prevState) => (prevState.map(post=>(
+      post.id === postId 
+        ? { ...post, removed:true }
+        : post
+    ))));
   }
 
   return (
