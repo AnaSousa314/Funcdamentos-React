@@ -2,7 +2,7 @@ import React,{useContext} from 'react';
 import PropTypes from 'prop-types'
 import Button from './Button';
 import { ThemeContext } from './ThemeContext';
-import styles from './header.css';
+import styles from './Header.scss';
 
 console.log(styles);
 export default function Header(props){

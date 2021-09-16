@@ -7,7 +7,7 @@ import { ThemeProvider } from "./ThemeContext";
 // Props (Properties) -> Propriedades
 
 //Quando trabalhamos com CSS modules, precisamos dar um nome para o arquivo importado. 
-import styles from './App.css'
+import styles from './App.scss'
 
 
 export default function App() {
