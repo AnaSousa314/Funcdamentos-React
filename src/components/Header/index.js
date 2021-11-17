@@ -1,16 +1,11 @@
 import React,{useContext} from 'react';
 import PropTypes from 'prop-types'
-import styled from 'styled-components';
 
-
+import Title from '../Title';
 import Button from '../Button';
 import styles from './Header.scss';
 
 import { ThemeContext } from '../../context/ThemeContext';
-
-const Title = styled.h1`
-  color: #637bf3;
-`;
 
 console.log(styles);
 export default function Header(props){

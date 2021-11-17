@@ -7,7 +7,10 @@ import { ThemeProvider } from "../../context/ThemeContext";
 // Props (Properties) -> Propriedades
 
 //Quando trabalhamos com CSS modules, precisamos dar um nome para o arquivo importado. 
-import styles from './App.scss'
+import styles from './App.scss';
+
+import {Title} from './styles';
+
 
 
 export default function App() {
@@ -56,10 +59,10 @@ export default function App() {
         title="JStack's Blog"
         // onToggleTheme={handleToggleTheme}  
       >
-        <h2 className={styles.title}>
+        <Title as="h2">
           Posts da semana
           <button onClick={handleRefresh}>Atualizar</button>
-        </h2>
+        </Title>
       </Header>
 
       <hr />
