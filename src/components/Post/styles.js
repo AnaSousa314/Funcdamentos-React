@@ -1,7 +1,7 @@
 import styled, {css} from 'styled-components';
 
 export const Container = styled.article`
-    margin-bottom: 24px;
+    margin-bottom: 32px;
 
     /* opacity: ${(props)=>props.removed ? 0.5 : 1};
     color: ${(props)=>props.removed ? "#f00" : "#fff"} */
